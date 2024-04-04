@@ -34,7 +34,7 @@ public class MainViewController {
         tblEmployee.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("address"));
         tblEmployee.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("gender"));
 
-        /* Set up table selection listener */
+        /* Set up the table selection listener */
         tblEmployee.getSelectionModel().selectedItemProperty().addListener((o, previous, current) -> {
             container.setDisable(current == null);
             btnSave.setDisable(current != null);
@@ -44,6 +44,7 @@ public class MainViewController {
             txtAddress.setEditable(current == null);
             genderWrapper.setDisable(current != null);
 
+            /* Display currently selected employee details */
             if (current != null) {
                 txtNic.setText(current.getNic());
                 txtName.setText(current.getName());
