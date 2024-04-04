@@ -1,0 +1,125 @@
+#root {
+    -fx-background-color: white;
+    -fx-font-family: Ubuntu;
+    -fx-font-size: 14px;
+}
+
+.heading {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-background-color: lightgray;
+    -fx-padding: 5px 8px;
+    -fx-cursor: hand;
+    -fx-border-color: lightgray;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: rgba(211, 211, 211, 0.9);
+}
+
+.button:focused{
+    -fx-border-color: #00b2ff;
+    -fx-effect: dropshadow(gaussian, #00b2ff, 2, 0.1, 0, 0);
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.text-field:hover{
+    -fx-border-color: #00b2ff;
+}
+
+.text-field:focused{
+    -fx-border-color: #00b2ff;
+    -fx-effect: dropshadow(gaussian, #00b2ff, 2, 0.1, 0, 0);
+}
+
+.label-container .label {
+    -fx-font-weight: bold;
+}
+
+.label.required{
+    -fx-text-fill: red;
+    -fx-padding: 0 0 0 2px;
+}
+
+#btnSave {
+    -fx-background-color: #00b2ff;
+    -fx-border-color: #00b2ff;
+}
+
+#btnSave:hover {
+    -fx-background-color: rgba(0, 178, 255, 0.8);
+}
+
+#btnDelete {
+    -fx-background-color: orange;
+    -fx-text-fill: black;
+    -fx-border-color: orange;
+}
+
+#btnDelete:hover {
+    -fx-background-color: rgba(255, 165, 0, 0.8);
+}
+
+#btnDelete:focused{
+    -fx-border-color:orange;
+    -fx-effect: dropshadow(gaussian, orange, 2, 0.1, 0, 0);
+}
+
+.center {
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.table-column.left .label{
+    -fx-alignment: center-left !important;
+    -fx-padding: 2px;
+}
+
+.left{
+    -fx-text-alignment: left;
+    -fx-alignment: center-left;
+}
+
+.table-view .table-row-cell:filled:hover{
+    -fx-background-color: lightgray;
+}
+
+.table-view .table-row-cell:filled:selected{
+    -fx-background-color: #189fd5;
+}
+
+.text-field.error{
+    -fx-border-color: red;
+}
+
+.text-field.error:hover{
+    -fx-border-color: red;
+}
+
+.text-field.error:focused{
+    -fx-border-color: red;
+    -fx-effect: dropshadow(gaussian, red, 2, 0.1, 0, 0);
+}
+
+.error .radio-button{
+    -fx-text-fill: red;
+}
+
+.error .radio-button .radio{
+    -fx-border-color: rgba(255, 0, 0, 0.58);
+    -fx-border-radius: 100%;
+}
+
+.radio-button {
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="root" prefHeight="565.0" prefWidth="600.0" stylesheets="@../css/MainView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep12.ems.controller.MainViewController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" styleClass="heading" text="Employee Management System" />
+      <Button fx:id="btnNewEmployee" layoutX="524.0" layoutY="14.0" onAction="#btnNewEmployeeOnAction" text="+ NEW _EMPLOYEE" AnchorPane.rightAnchor="14.0" />
+      <GridPane fx:id="container" hgap="5.0" layoutX="14.0" layoutY="57.0" prefWidth="572.0" vgap="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="108.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="464.0" minWidth="10.0" prefWidth="464.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT" styleClass="label-container">
+               <children>
+                  <Label accessibleText="#txtNic" mnemonicParsing="true" text="_NIC" />
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="required" text="*" />
+                  <Label layoutX="33.0" layoutY="10.0" text=" : " />
+               </children>
+            </HBox>
+            <TextField fx:id="txtNic" GridPane.columnIndex="1" />
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" styleClass="label-container" GridPane.rowIndex="1">
+               <children>
+                  <Label accessibleText="#txtName" mnemonicParsing="true" text="NA_ME" />
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="required" text="*" />
+                  <Label layoutX="33.0" layoutY="10.0" text=" : " />
+               </children>
+            </HBox>
+            <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="40.0" styleClass="label-container" GridPane.rowIndex="2">
+               <children>
+                  <Label accessibleText="#txtAddress" mnemonicParsing="true" text="_ADDRESS" />
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="required" text="*" />
+                  <Label layoutX="33.0" layoutY="10.0" text=" : " />
+               </children>
+            </HBox>
+            <TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="70.0" styleClass="label-container" GridPane.rowIndex="3">
+               <children>
+                  <Label accessibleText="#rdMale" mnemonicParsing="true" text="_GENDER" />
+                  <Label layoutX="10.0" layoutY="10.0" styleClass="required" text="*" />
+                  <Label layoutX="33.0" layoutY="10.0" text=" : " />
+               </children>
+            </HBox>
+            <HBox fx:id="genderWrapper" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <RadioButton fx:id="rdMale" mnemonicParsing="false" text="MALE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="grpGender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rdFemale" mnemonicParsing="false" text="FEMALE" toggleGroup="$grpGender" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="btnSave" defaultButton="true" maxHeight="1.7976931348623157E308" onAction="#btnSaveOnAction" prefWidth="75.0" text="_SAVE">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelete" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" onAction="#btnDeleteOnAction" prefWidth="75.0" text="_DELETE">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <TableView fx:id="tblEmployee" layoutX="14.0" layoutY="243.0" onKeyPressed="#tblEmployeeOnKeyPressed" prefHeight="303.0" prefWidth="572.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+        <columns>
+          <TableColumn prefWidth="121.0" styleClass="center" text="NIC" />
+          <TableColumn prefWidth="148.0" styleClass="left" text="NAME" />
+            <TableColumn prefWidth="188.0" styleClass="left" text="ADDRESS" />
+            <TableColumn prefWidth="74.0" styleClass="center" text="GENDER" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
