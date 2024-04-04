@@ -31,6 +31,8 @@
     -fx-border-color: lightgray;
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4d4d4d;
 }
 
 .text-field:hover{
